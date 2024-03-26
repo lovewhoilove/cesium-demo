@@ -41,7 +41,7 @@ export default {
   },
   mounted() {
     this.initMapViewer();
-    this.addTiandituLayer();
+    // this.addTiandituLayer();
     this.initViewport();
   },
   methods: {
@@ -62,12 +62,15 @@ export default {
         skyBox: false,//skyBox、Sun or Moon都不会被添加
         shouldAnimate: true, //是否允许动画
         showRenderLoopErrors: false,//如果为true，则如果出现渲染循环错误，此小部件将自动向用户显示包含错误的HTML面板。
+        // imageryProvider:false,//老版本api移除默认图层方法,兼容新版本api
+        // baseLayer:false,//新版本api移除默认图层的方法
       });
       //隐藏版权信息
       this.viewer.cesiumWidget.creditContainer.style.display = 'none';
       //添加帧速显示
       this.viewer.scene.debugShowFramesPerSecond = true;
-      this.viewer.imageryLayers.removeAll();//删除默认的影像图层
+      //新版老版api通用移除默认图层的方法
+      this.viewer.imageryLayers.removeAll();//删除默认的影像图层ImageryLayer.fromWorldImagery()
     },
     addTiandituLayer() {
       const tianditu = new Tianditu();
