@@ -1,6 +1,6 @@
 <template>
   <div class="one-map">
-    <MapView />
+    <MapView :mapType="'tdtImg'" /> <!-- 这里我们可以传入默认要显示的图层类型 -->
   </div>
 </template>
 
