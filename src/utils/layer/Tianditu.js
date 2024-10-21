@@ -2,7 +2,7 @@ import { WebMapTileServiceImageryProvider, UrlTemplateImageryProvider } from 'ce
 
 export default class Tianditu {
   #baseUrl = 'https://t{s}.tianditu.gov.cn/';
-  #tk = 'c213a6f77139543176480fd25fbd0184';
+  #tk = '你的tk';
   #sourceType = {
     '矢量底图': 'vec',
     '矢量注记': 'cva',
